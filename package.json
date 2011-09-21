@@ -1,0 +1,15 @@
+{
+  "name": "test-tcp",
+  "description": "testing TCP program",
+  "version": "0.0.0",
+  "author": "sugyan <sugi1982+git@gmail.com> (http://sugyan.com/)",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~v0.4.12"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "main": "index"
+}
