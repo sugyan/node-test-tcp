@@ -2,11 +2,15 @@
 
 Testing TCP program, like as Perl's [Test::TCP](http://search.cpan.org/~tokuhirom/Test-TCP/).
 
+## Installation ##
+
+    $ npm install test-tcp
+
 ## Usage ##
 
 net:
 
-    var TestTCP = require('./lib/test-tcp');
+    var TestTCP = require('test-tcp');
     var assert = require('assert');
     var net = require('net');
     
@@ -31,7 +35,7 @@ net:
 
 http:
 
-    var TestTCP = require('./lib/test-tcp');
+    var TestTCP = require('test-tcp');
     var assert = require('assert');
     var http = require('http');
     
@@ -59,7 +63,7 @@ http:
 
 OO-ish:
 
-    var TestTCP = require('./lib/test-tcp');
+    var TestTCP = require('test-tcp');
     var assert = require('assert');
     var net = require('net');
     
