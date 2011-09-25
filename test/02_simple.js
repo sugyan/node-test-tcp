@@ -3,11 +3,11 @@ var net = require('net');
 
 exports.simple = function (test) {
     TestTCP.test_tcp({
-        client: function (port, callback) {
+        client: function (port, done) {
             var socket = new net.Socket();
             socket.connect(port, function () {
                 socket.on('close', function () {
-                    callback(function () {
+                    done(function () {
                         test.done();
                     });
                 });

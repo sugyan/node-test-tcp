@@ -3,15 +3,15 @@ var net = require('net');
 
 exports.nest = function (test) {
     TestTCP.test_tcp({
-        client: function (port, callback1) {
+        client: function (port, done1) {
             TestTCP.test_tcp({
-                client: function (port, callback2) {
+                client: function (port, done2) {
                     var socket = new net.Socket();
                     socket.connect(port, function () {
                         var write;
                         socket.on('close', function () {
-                            callback2(function () {
-                                callback1(function () {
+                            done2(function () {
+                                done1(function () {
                                     test.done();
                                 });
                             });
