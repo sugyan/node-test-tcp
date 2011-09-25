@@ -1,7 +1,7 @@
 var TestTCP = require('./../index');
 var net = require('net');
 
-exports.test_tcp = function (test) {
+exports.nest = function (test) {
     TestTCP.test_tcp({
         client: function (port, callback1) {
             TestTCP.test_tcp({

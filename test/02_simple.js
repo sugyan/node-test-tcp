@@ -1,12 +1,11 @@
 var TestTCP = require('./../index');
 var net = require('net');
 
-exports.test_tcp = function (test) {
+exports.simple = function (test) {
     TestTCP.test_tcp({
         client: function (port, callback) {
             var socket = new net.Socket();
             socket.connect(port, function () {
-                var write;
                 socket.on('close', function () {
                     callback(function () {
                         test.done();
