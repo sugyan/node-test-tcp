@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "author": "sugyan <sugi1982+github@gmail.com> (http://sugyan.com/)",
   "repository": {
-    "url": ""
+    "type": "git",
+    "url": "https://sugyan@github.com/sugyan/node-test-tcp.git"
   },
   "engines": {
     "node": "~v0.4.12"
