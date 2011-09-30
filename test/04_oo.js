@@ -8,7 +8,8 @@ exports.oo = function (test) {
                 socket.write(data);
             });
         })
-    }, function () {
+    });
+    server.on('start', function () {
         var socket = new net.Socket();
         socket.connect(server.port, function () {
             socket.on('close', function () {

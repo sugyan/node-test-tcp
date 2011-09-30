@@ -1,7 +1,7 @@
 {
   "name": "test-tcp",
   "description": "testing TCP program, like as perl's Test::TCP.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "sugyan <sugi1982+github@gmail.com> (http://sugyan.com/)",
   "repository": {
     "type": "git",
