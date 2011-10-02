@@ -107,6 +107,15 @@ __Arguments__
 * port - Optional, the number you want to use.
 * callback(err, port) - A callback which is called after available port was found (or failed).
 
+### empty_ports(number, callback) ###
+
+Get the array of available port number.
+
+__Arguments__
+
+* number - Required, the number you want to get.
+* callback(err, ports) - A callback which is called after available ports were found (or failed).
+
 ## Testing ##
 
     $ make test

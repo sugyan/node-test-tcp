@@ -71,3 +71,14 @@ exports.fail = function (test) {
         });
     });
 };
+
+exports.empty_ports = function (test) {
+    TestTCP.empty_ports(3, function (err, ports) {
+        test.ok(! err, 'no error');
+        test.equal(ports.length, 3, 'ports number');
+        test.ok(ports[0] !== ports[1], 'different port 0-1');
+        test.ok(ports[0] !== ports[2], 'different port 0-2');
+        test.ok(ports[1] !== ports[2], 'different port 1-2');
+        test.done();
+    });
+};
