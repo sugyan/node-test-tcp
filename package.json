@@ -15,5 +15,8 @@
     "mocha": ">=0.14.0"
   },
   "main": "index",
-  "keywords": ["test", "tcp"]
+  "keywords": ["test", "tcp"],
+  "scripts": {
+    "test": "mocha"
+  }
 }
