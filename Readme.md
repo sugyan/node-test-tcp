@@ -1,5 +1,6 @@
 # node-test-tcp #
 
+[![Build Status](https://secure.travis-ci.org/sugyan/node-test-tcp.png?branch=master)](http://travis-ci.org/sugyan/node-test-tcp)<br>
 Testing TCP program, like as Perl's [Test::TCP](http://search.cpan.org/~tokuhirom/Test-TCP/).
 
 ## Installation ##
