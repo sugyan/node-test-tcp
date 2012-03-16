@@ -1,23 +1,24 @@
 var TestTCP = require('./../index');
+var assert = require('assert');
 var net = require('net');
 
-exports.nest = function (test) {
+global.test('nest', function (done) {
     TestTCP.test_tcp({
-        client: function (port, done1) {
+        client: function (port, callback1) {
             TestTCP.test_tcp({
-                client: function (port, done2) {
+                client: function (port, callback2) {
                     var socket = new net.Socket();
                     socket.connect(port, function () {
                         var write;
                         socket.on('close', function () {
-                            done2(function () {
-                                done1(function () {
-                                    test.done();
+                            callback2(function () {
+                                callback1(function () {
+                                    done();
                                 });
                             });
                         });
                         socket.on('data', function (data) {
-                            test.equal(data.toString(), 'foo', 'echo');
+                            assert.equal(data.toString(), 'foo', 'echo');
                             socket.end();
                         });
                         socket.write('foo');
@@ -36,4 +37,4 @@ exports.nest = function (test) {
             });
         })
     });
-};
+});

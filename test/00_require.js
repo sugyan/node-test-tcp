@@ -1,4 +1,5 @@
-exports.require = function (test) {
-    test.ok(require('./../index'), 'require success');
-    test.done();
-};
+var assert = require('assert');
+
+global.test('require', function () {
+    assert.ok(require('./../index'), 'require success');
+});

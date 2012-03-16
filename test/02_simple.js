@@ -1,18 +1,19 @@
 var TestTCP = require('./../index');
+var assert = require('assert');
 var net = require('net');
 
-exports.simple = function (test) {
+global.test('simple', function (done) {
     TestTCP.test_tcp({
-        client: function (port, done) {
+        client: function (port, callback) {
             var socket = new net.Socket();
             socket.connect(port, function () {
                 socket.on('close', function () {
-                    done(function () {
-                        test.done();
+                    callback(function () {
+                        done();
                     });
                 });
                 socket.on('data', function (data) {
-                    test.equal(data.toString(), 'foo', 'echo');
+                    assert.equal(data.toString(), 'foo', 'echo');
                     socket.end();
                 });
                 socket.write('foo');
@@ -24,4 +25,4 @@ exports.simple = function (test) {
             });
         })
     });
-};
+});

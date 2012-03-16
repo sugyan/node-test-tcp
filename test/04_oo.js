@@ -1,7 +1,8 @@
 var TestTCP = require('./../index');
+var assert = require('assert');
 var net = require('net');
 
-exports.oo = function (test) {
+global.test('oo', function (done) {
     var server; server = new TestTCP.TestTCP({
         code: net.createServer(function (socket) {
             socket.on('data', function (data) {
@@ -14,19 +15,19 @@ exports.oo = function (test) {
         socket.connect(server.port, function () {
             socket.on('close', function () {
                 server.stop(function () {
-                    test.done();
+                    done();
                 });
             });
             socket.on('data', function (data) {
-                test.equal(data.toString(), 'foo', 'echo');
+                assert.equal(data.toString(), 'foo', 'echo');
                 socket.end();
             });
             socket.write('foo');
         });
     });
-};
+});
 
-exports.stop_without_callback = function (test) {
+global.test('stop without callback', function (done) {
     var server; server = new TestTCP.TestTCP({
         code: net.createServer(function (socket) {
             socket.on('data', function (data) {
@@ -39,13 +40,13 @@ exports.stop_without_callback = function (test) {
         socket.connect(server.port, function () {
             socket.on('close', function () {
                 server.stop();
-                test.done();
+                done();
             });
             socket.on('data', function (data) {
-                test.equal(data.toString(), 'foo', 'echo');
+                assert.equal(data.toString(), 'foo', 'echo');
                 socket.end();
             });
             socket.write('foo');
         });
     });
-};
+});
